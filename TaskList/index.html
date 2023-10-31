@@ -1,0 +1,108 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+</head>
+
+<body ng-app="TasksList" ng-controller="TasksController">
+    <div class="container">
+        <div class="left-content">
+            <div class="logo">
+                <h1>My List</h1>
+            </div>
+<!--             <div class="menu-items">
+                <ul>
+                    <li><a href="#"><i class='bx bx-home-alt'></i> Overview</a></li>
+                    <li><a href="#"><i class='bx bx-stats'></i> Stats</a></li>
+                    <li><a href="#"><i class='bx bx-folder-open'></i> Projects</a></li>
+                    <li><a href="#"><i class='bx bx-comment-dots'></i> Chat</a></li>
+                    <li><a href="#"><i class='bx bx-calendar'></i> Calendar</a></li>
+                </ul>
+            </div>
+            <div class="setting_logout">
+                <ul>
+                    <li><a href="#"><i class='bx bx-cog'></i> Settings</a></li>
+                    <li><a href="#"><i class='bx bx-log-out'></i> Log Out</a></li>
+                </ul>
+            </div> -->
+        </div>
+        <div class="right-content">
+            <div class="navbar">
+                <div class="search-box">
+                    <i class='bx bx-search-alt-2'></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="profile-content">
+                    <div class="notification">
+                        <i class='bx bxs-bell'></i>
+                    </div>
+                    <div class="name">
+                        <p>garry.code</p>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="marcus aurelius.jpg" alt="profile photo">
+                    </div>
+                </div>
+            </div>
+            <div class="lists">
+                <div class="title">
+                    <h1>Projects</h1>
+                </div>
+                <div class="status">
+                    <div class="to-do">
+                        <span>To Do</span>
+                        <div class="to-do-list">
+                            <div class="arr-lists" id="drop-items">
+                                <p ng-repeat="todo in ToDoArr">{{todo}} <span ng-click="deleteItem($index)"><i
+                                            class='bx bx-x-circle'></i></span>
+                                </p>
+                            </div>
+                            <div class="new_add">
+                                <input type="text" placeholder="add..." ng-model="td">
+                                <button ng-click="addTodo()">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doing">
+                        <span>Doing</span>
+                        <div class="to-do-list">
+                            <div class="arr-lists" id="drop-items1">
+                                <p ng-repeat="doing in DoingArr">{{doing}} <span ng-click="deleteItemDoing($index)"><i
+                                            class='bx bx-x-circle'></i></span>
+                                </p>
+                            </div>
+                            <div class="new_add">
+                                <input type="text" placeholder="add..." ng-model="di">
+                                <button ng-click="addDoing()">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="done">
+                        <span>Done</span>
+                        <div class="to-do-list">
+                            <div class="arr-lists" id="drop-items2">
+                                <p ng-repeat="done in DoneArr">{{done}} <span ng-click="deleteItemDone($index)"><i
+                                            class='bx bx-x-circle'></i></span>
+                                </p>
+                            </div>
+                            <div class="new_add">
+                                <input type="text" placeholder="add..." ng-model="dn">
+                                <button ng-click="addDone()">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
